@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Agent</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; }
+      .preview { max-width: 400px; margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Image Agent — Inference</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" required />
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+      <h2>Result: {{ result }}</h2>
+    {% endif %}
+
+    {% if filename %}
+      <div>
+        <h3>Uploaded:</h3>
+        <img class="preview" src="/static/uploads/{{ filename }}" alt="uploaded image" />
+      </div>
+    {% endif %}
+  </body>
+  </html>

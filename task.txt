@@ -1,0 +1,21 @@
+1. Train a DL model on `wine_quality.csv`
+
+2. Train a sentiment analyzer without transformers on `sentiment_analysis.csv`
+
+3. Fine-tune a base transformer model using `transformer.txt`
+
+4. Train an NER model without transformers on `ner.csv`
+
+5. Train an image classification model without transformers on the image dataset
+
+6. Train a “Reverse Image Search” engine without using transformers. It should retrieve the top 5 most visually similar images from the dataset.
+
+7. Build an agentic workflow that can answer complex, multi-step analytical queries from `wine_quality.csv` (e.g., “What chemical factors most strongly predict high-quality wine?”)
+
+8. Build an agentic system that answers user queries by cross-referencing a static internal document with live web data. The agent must verify whether the information in the document is still accurate and complement it with real-world context.
+
+### Notes
+
+* The output for this task should include the required files, such as `.ipynb`, `.R`, and CSV output files.
+* It may be useful to include brief descriptions or documentation explaining what was done and why.
+* It is not necessary to complete every task — quality is valued over quantity.

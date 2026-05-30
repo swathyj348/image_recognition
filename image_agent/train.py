@@ -37,8 +37,7 @@ def train(root_dir, epochs=3, batch_size=32, lr=1e-3, out_path='model.pth'):
             running_loss += loss.item() * inputs.size(0)
 
         print(f"Epoch {epoch+1} train loss: {running_loss/len(train_loader.dataset):.4f}")
-
-        # validation
+        
         model.eval()
         correct = 0
         total = 0
@@ -51,8 +50,7 @@ def train(root_dir, epochs=3, batch_size=32, lr=1e-3, out_path='model.pth'):
                 correct += (preds == labels).sum().item()
                 total += labels.size(0)
         print(f"Val acc: {correct/total:.4f}")
-
-    # save
+    
     torch.save({'model_state_dict': model.state_dict(), 'classes': classes}, out_path)
     print('Model saved to', out_path)
 

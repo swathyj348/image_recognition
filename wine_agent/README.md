@@ -1,32 +1,23 @@
-# Wine Intelligence Lab
+# Wine Analysis
 
-This project turns `wine_quality.csv` into a small analytical product.
+Trains a deep learning model on `wine_quality.csv` to predict high-quality wines. Exports metrics and feature importance.
 
-It trains a deep learning model to predict whether a wine is high quality, saves CSV outputs for the report, and answers simple analyst-style questions from the saved artifacts.
-
-Quick start:
-
+Run:
 ```powershell
 python -m pip install -r requirements.txt
-
-# train the model and export metrics/feature importance/predictions
 python -m wine_agent.train
-
-# ask the built-in analyst a question
 python -m wine_agent.agent --question "What chemical factors most strongly predict high-quality wine?"
 ```
 
 Files:
+- `data.py` — loads and prepares wine data
+- `model.py` — PyTorch classifier
+- `train.py` — model training and CSV outputs
+- `agent.py` — analytical queries
 
-- `data.py`: loads and prepares the wine data.
-- `model.py`: the PyTorch classifier.
-- `train.py`: trains the model and writes CSV outputs.
-- `agent.py`: answers simple analytical questions from those outputs.
-
-Generated outputs:
-
-- `wine_agent/outputs/wine_training_metrics.csv`
-- `wine_agent/outputs/wine_test_metrics.csv`
-- `wine_agent/outputs/wine_feature_importance.csv`
-- `wine_agent/outputs/wine_test_predictions.csv`
-- `wine_agent/outputs/wine_classifier.pth`
+Outputs:
+- `outputs/wine_training_metrics.csv`
+- `outputs/wine_test_metrics.csv`
+- `outputs/wine_feature_importance.csv`
+- `outputs/wine_test_predictions.csv`
+- `outputs/wine_classifier.pth`

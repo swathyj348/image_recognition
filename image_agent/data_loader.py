@@ -20,8 +20,6 @@ def get_image_dataloaders(root_dir, img_size=224, batch_size=32, val_split=0.2, 
     val_size = int(total * val_split)
     train_size = total - val_size
     train_ds, val_ds = random_split(full_dataset, [train_size, val_size])
-
-    # ensure val uses validation transforms
     val_ds.dataset = datasets.ImageFolder(root=root_dir, transform=transform_val)
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=num_workers)

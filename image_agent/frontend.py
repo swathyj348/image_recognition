@@ -5,7 +5,6 @@ from werkzeug.utils import secure_filename
 from .infer import predict
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-# store uploaded images under the package's static folder so Flask can serve them
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'uploads')
 MODEL_PATH = os.path.join(BASE_DIR, 'model_full.pth')
 

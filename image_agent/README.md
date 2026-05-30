@@ -1,32 +1,27 @@
-# Visual Search Studio
+# Image Classification
 
-Minimal vision project using PyTorch transfer learning (ResNet18).
+Vision project using PyTorch transfer learning (ResNet18) for image classification and reverse image search.
 
-It includes image classification plus reverse image search over the same dataset.
-
-Quick start (GPU recommended):
-
-```bash
-# install
+Run:
+```powershell
 pip install -r image_agent/requirements.txt
 
-# train (dataset must be arranged as root/class_name/imagename.jpg)
+# Train
 python -m image_agent.cli train --data image_dataset --epochs 5 --batch 32 --out model.pth
 
-# infer
+# Infer
 python -m image_agent.cli infer --model model.pth --image image_dataset/Apple/example.jpg
 
-# reverse image search index
+# Reverse image search index
 python -m image_agent.cli build-index --data image_dataset --index image_agent/reverse_index.npz
 
-# search for the top 5 similar images
+# Search for similar images
 python -m image_agent.cli search --query image_dataset/Apple/example.jpg --index image_agent/reverse_index.npz --top-k 5 --out image_agent/reverse_search_results.csv
 ```
 
 Files:
-
-- `data_loader.py`: builds train/val loaders from a folder of class subfolders.
-- `train.py`: training loop using pretrained ResNet18.
-- `infer.py`: single-image inference using saved checkpoint.
-- `reverse_search.py`: builds a reverse-search index and returns the top matches.
-- `cli.py`: simple CLI wrapper.
+- `data_loader.py` — train/val loaders from class subfolders
+- `train.py` — training loop using ResNet18
+- `infer.py` — single-image inference
+- `reverse_search.py` — reverse-search index and top matches
+- `cli.py` — CLI wrapper

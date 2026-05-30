@@ -13,7 +13,6 @@ def predict(model_path, img_path):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     ckpt, classes = load_checkpoint(model_path, device)
 
-    # build model skeleton
     import torch.nn as nn
     from torchvision import models
     model = models.resnet18(pretrained=False)
